@@ -1,0 +1,140 @@
+<!-- Создаём пустой шаблон -->
+<!Doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+<meta charset="UTF-8">
+<title>Экзамен JQuery</title>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="application.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/cupertino/jquery-ui.css">
+  <style>
+    .error input {
+      border: 2px solid red;
+    }
+
+    .error-message {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div id="tabs">
+	<div id="students">
+
+		<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			
+				<p><a id="add-student-button">Новая запись</a></p><!-- кнопка -->
+				
+				<table class="table" id="students-list">
+					<thead>
+					<tr>
+						<th>Фамилия Имя Отчество</th>
+						<th>Предмет</th>
+						<th>Дата</th>
+						<th>Оценка</th>
+						<th>Редактировать</th>
+					</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	</div>
+</div>
+
+<div id="messenger"></div>
+
+<div class="container" id="page-add-student">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Новая запись</h1>
+			<form onsubmit="addStudent(this, event)" id="add-student-form">
+			
+			<div class="form-group">
+				<label for="students_name">Введите</label>
+				<input id="tags" type="text"  class="form-control" placeholder="Фамилия Имя Отчество" name="students_name" />
+			</div>
+			
+			<div class="form-group">
+				<label for="subject">Выберите предмет</label>
+				<select class="form-control sub" name="subject">
+				</select>
+			</div>
+			
+			<div class="form-group">
+				<label for="date">Выберите дату</label>
+				<input id="datepicker" type="text" class="form-control" name="mydate" />
+			</div>
+			
+			<div id="grd" class="form-group">
+			<label>Оценка</label><br>
+				<input type="radio" name="grade" value="Неявка"/> Неявка<br>
+				<input type="radio" name="grade" value="Неудовлетворительно" /> Неудовлетворительно<br>
+				<input type="radio" name="grade" value="Удовлетворительно" /> Удовлетворительно<br>
+				<input type="radio" name="grade" value="Хорошо" /> Хорошо<br>
+				<input type="radio" name="grade" value="Отлично" /> Отлично
+			</div>
+			
+			<div class="form-group">
+				<input type="submit" class="add-a-note" value="Добавить запись" />
+			</div>
+			
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="container" id="page-edit-student">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Редактировать запись</h1>
+			<form onsubmit="editStudent(this, event)" id="edit-student-form">
+			
+			<div class="form-group">
+				<label for="students_name">Введите</label>
+				<input type="text"  class="form-control" placeholder="Фамилия Имя Отчество" name="students_name" />
+			</div>
+			
+			<div class="form-group">
+				<label for="subject">Выберите предмет</label>
+				<select class="form-control sub" name="subject">
+				</select>
+			</div>
+			
+			<div class="form-group">
+				<label for="date">Выберите дату</label>
+				<input type="text" class="form-control" name="mydate" />
+			</div>
+			
+			<div class="form-group">
+			<label>Оценка</label><br>
+			<input type="radio" name="grade" value="Неявка"/> Неявка<br>
+			<input type="radio" name="grade" value="Неудовлетворительно" /> Неудовлетворительно<br>
+			<input type="radio" name="grade" value="Удовлетворительно" /> Удовлетворительно<br>
+			<input type="radio" name="grade" value="Хорошо" /> Хорошо<br>
+			<input type="radio" name="grade" value="Отлично" /> Отлично
+			</div>
+			
+			<div class="form-group">
+				<input type="submit" class="add-a-note" value="Редактировать запись" />
+			</div>
+			
+			</form>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
